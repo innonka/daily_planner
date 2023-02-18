@@ -11,9 +11,9 @@ var workDay = [
 ];
 
 // Check if events are stored in local storage
-var events = JSON.parse(localStorage.getItem('events'));
+var events = JSON.parse(localStorage.getItem("events"));
 if (events) {
-  workDay.forEach(function(item) {
+  workDay.forEach(function (item) {
     item.event = events[item.time] || "";
   });
 }
@@ -28,7 +28,9 @@ function displayWorkDay() {
     var hourEl = $("<div>").addClass("hour col-2").text(workDay[i].time);
 
     // Create a text area for the event
-    var textAreaEl = $("<textarea>").addClass("col-8 description").val(workDay[i].event);
+    var textAreaEl = $("<textarea>")
+      .addClass("col-8 description")
+      .val(workDay[i].event);
 
     // Add a class to the text area to indicate whether it's in the past, present, or future
     if (moment(workDay[i].time, "h:mm a").isBefore(moment(), "hour")) {
@@ -52,21 +54,26 @@ function displayWorkDay() {
   }
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
   displayWorkDay();
 
   // Save events to local storage when save button is clicked
-  $('.saveBtn').on('click', function() {
-    var hour = $(this).siblings('.hour').text().trim();
-    var text = $(this).siblings('.description').val().trim();
-    workDay.forEach(function(item) {
+  $(".saveBtn").on("click", function () {
+    var hour = $(this).siblings(".hour").text().trim();
+    var text = $(this).siblings(".description").val().trim();
+    workDay.forEach(function (item) {
       if (item.time === hour) {
         item.event = text;
       }
     });
-    localStorage.setItem('events', JSON.stringify(workDay.reduce(function(obj, item) {
-      obj[item.time] = item.event;
-      return obj;
-    }, {})));
+    localStorage.setItem(
+      "events",
+      JSON.stringify(
+        workDay.reduce(function (obj, item) {
+          obj[item.time] = item.event;
+          return obj;
+        }, {})
+      )
+    );
   });
 });
