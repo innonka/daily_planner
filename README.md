@@ -18,7 +18,7 @@ The task is then saved locally. When the user refreshes the page, the saved even
 To use the workday scheduler, simply open the deployed page in your browser. The current date and time will be displayed at the top of the page. Scroll down to view the timeblocks for the standard business hours of 9AM to 5PM. Each timeblock is color-coded to indicate whether it is in the past (grey), present (red), or future (green). To add your task, simply click on the text area for the corresponding timeblock and enter it. To save your event, click the save button for that timeblock. 
 
 ## Deployment 
-Deployed [Link](https://innonka.github.io/daily_planner/) using GitHub Pages 
+Deployed [Here](https://innonka.github.io/daily_planner/) using GitHub Pages 
 
 ## Screenshot
 ![Screenshot](/images/Screenshot.jpg)
