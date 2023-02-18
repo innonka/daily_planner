@@ -27,6 +27,10 @@ Bootstrap
 jQuery
 Moment.js
 
+## License 
+
+MIT License
+
 ## Credits
 
 This project was created by  *Inna*.
